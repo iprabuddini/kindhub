@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
+Route::get('/', 'ClassController@index');
 
-Route::get('/class', 'ClassController@index');
+Route::get('/home', 'ClassController@index');
 Route::get('/class/all', 'ClassController@getAll');
 Route::get('/class/{id}', 'ClassController@delete');
 
-Route::post('/classes/store', 'ClassController@store');
+Route::post('/class/create', 'ClassController@store');

@@ -1,59 +1,51 @@
-<div class="form-group">
-    <router-link to="/" class="btn btn-default">Back</router-link>
-</div>
+<template>
+  <div>
+    <h1>Create A Class</h1>
+    <form @submit.prevent="addClass">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" v-model="schoolclass.name">
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Description:</label>
+              <textarea class="form-control" v-model="schoolclass.description" rows="5"></textarea>
+            </div>
+          </div>
+        </div><br />
+        <div class="form-group">
+          <button class="btn btn-info">Create</button>
+        </div>
+    </form>
+  </div>
+</template>
 
-<div class="panel panel-default">
-    <div class="panel-heading">Create new class</div>
-    <div class="panel-body">
-        <form v-on:submit="saveForm()">
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    <label class="control-label">Class name</label>
-                    <input type="text" v-model="Class.name" class="form-control">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    <label class="control-label">Description</label>
-                    <input type="text" v-model="Class.description" class="form-control">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    <button class="btn btn-success">Create</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
 <script>
     export default {
-        data: function () {
-            return {
-                Class: {
-                    name: '',
-                    description: '',
-                    
-                }
-            }
-        },
-        mounted() {
-          console.log('mount');
-        },
-        methods: {
-            saveForm() {
-                event.preventDefault();
-                var app = this;
-                var newClass = app.Class;
-                axios.post('/class/store', newClass)
-                    .then(function (resp) {
-                        app.$router.push({path: '/'});
-                    })
-                    .catch(function (resp) {
-                        console.log(resp);
-                        alert("Could not create your Class");
-                    });
-            }
+        data(){
+        return {
+          schoolclass:{}
         }
+    },
+    methods: {
+      addClass(){
+        event.preventDefault();
+        var app = this;
+        var newClass = app.schoolclass;
+        axios.post('/class/create', newClass)
+            .then(function (resp) {
+                app.$router.push({path: '/'});
+            })
+            .catch(function (resp) {
+                console.log(resp);
+                alert("Could not create your Class");
+            });
+      }
     }
+  }
 </script>

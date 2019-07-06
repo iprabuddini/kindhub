@@ -1,18 +1,18 @@
 <?php
 namespace App\Repositories;
 
-use App\Post;
+use App\Models\Teacher;
 
 class TeacherRepository implements TeacherRepositoryInterface
 {
     /**
-     * Get's a post by it's ID
+     * Get's a teacher by it's ID
      *
      * @param int
      * @return collection
      */
-    public function get($post_id)
+    public function get($teacher_id)
     {
-        return Post::find($post_id);
+        return Teacher::find($teacher_id);
     }
 }

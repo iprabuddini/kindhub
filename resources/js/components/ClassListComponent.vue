@@ -4,6 +4,7 @@
             <div class="col-md-8">
             <div class="form-group">
                 <router-link :to="{name: 'createClass'}" class="btn btn-success">Create new class</router-link>
+
             </div>
                 <div class="table table-borderless" id="table">
                     <table class="table table-borderless" id="table">
@@ -20,8 +21,9 @@
                             <td>{{ item.name }}</td>
                             <td>{{ item.description }}</td>
                             <td>
-<button class="button is-primary" v-bind:class="{ 'is-loading' : isDeleting(item.id) }" @click="deleteItem(item.id)">Delete Item</button>
-</td>
+                            <button class="button btn-danger" v-bind:class="{ 'is-loading' : isDeleting(item.id) }" @click="deleteItem(item.id)">Delete
+                            </button>
+                            </td>
                             
                             
                         </tr>
