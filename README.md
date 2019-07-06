@@ -1,10 +1,10 @@
 # kindhub
 Getting started
 
-Installation
+`Installation`
 Please check the official laravel installation guide for server requirements before you start. Official Documentation
 
-Clone the repository
+`Clone the repository`
 git clone git@github.com:iprabuddini/kindhub.git
 
 Switch to the repo folder
