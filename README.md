@@ -1,9 +1,9 @@
 # kindhub
 -------------
 ## Getting started
-=======================
+------------------
 ## Installation
-=======================
+---------------
 
 Please check the official laravel installation guide for server requirements before you start. Official Documentation
 
@@ -30,14 +30,13 @@ php artisan serve
 You can now access the server at http://localhost:8000
 
 ## command list
-=======================
+---------------
 
-`git clone git@github.com:iprabuddini/kindhub.git
-cd kindhub
-composer install
-cp .env.example .env
-php artisan key:generate
-Make sure you set the correct database connection information before running the migrations Environment variables
-
-php artisan migrate
-php artisan serve`
+`git clone git@github.com:iprabuddini/kindhub.git`
+`cd kindhub`
+`composer install`
+`cp .env.example .env`
+`php artisan key:generate`
+`Make sure you set the correct database connection information before running the migrations Environment variables`
+`php artisan migrate`
+`php artisan serve`
