@@ -17,6 +17,8 @@ class CreateClassesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
+            $table->bigInteger('teacher_id')->unsigned()->nullable();  
+            $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->timestamps();
         });
     }

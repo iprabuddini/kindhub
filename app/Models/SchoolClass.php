@@ -16,4 +16,9 @@ class SchoolClass extends Model
     {
         return $this->hasMany('App\Models\Student');
     }
+
+    public function teacher()
+    {
+        return $this->belongsTo('App\Models\Teacher', 'teacher_id');
+    }
 }
