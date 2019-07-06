@@ -15,4 +15,23 @@ class TeacherRepository implements TeacherRepositoryInterface
     {
         return Teacher::find($teacher_id);
     }
+
+    public function all()
+    {
+        return Teacher::all();
+    }
+
+    public function delete($id)
+    {
+        $class = Teacher::findOrFail($id);
+        $class->delete();
+        return response()->json(null);
+    }
+
+    public function store($data)
+    {
+
+        $class = Teacher::create($data);
+        return $class;
+    }
 }

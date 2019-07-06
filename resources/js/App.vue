@@ -5,13 +5,13 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link to="/" class="nav-link">Home</router-link>
+          <router-link to="/" class="nav-link">Class</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/create" class="nav-link">Create Class</router-link>
+          <router-link to="/teacher" class="nav-link">Teacher</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/teachers" class="nav-link">Teachers</router-link>
+          <router-link to="/student" class="nav-link">Student</router-link>
         </li>
       </ul>
     </nav><br />

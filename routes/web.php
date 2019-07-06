@@ -19,5 +19,9 @@ Route::get('/', 'ClassController@index');
 Route::get('/home', 'ClassController@index');
 Route::get('/class/all', 'ClassController@getAll');
 Route::get('/class/{id}', 'ClassController@delete');
-
 Route::post('/class/create', 'ClassController@store');
+
+Route::get('/teachers/all', 'TeacherController@getAll');
+Route::post('/teacher/create', 'TeacherController@store');
+Route::get('/teacher/{id}', 'TeacherController@delete');
+

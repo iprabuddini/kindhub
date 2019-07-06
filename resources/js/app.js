@@ -14,8 +14,9 @@ import App from './App.vue';
 Vue.use(VueAxios, axios);
 
 import ClassList from './components/ClassListComponent.vue';
-import TeachersListComponent from './components/TeachersListComponent.vue';
+import TeachersList from './components/TeachersListComponent.vue';
 import ClassesCreate from './components/ClassCreateComponent.vue';
+import TeachersCreate from './components/TeacherCreateComponent.vue';
 
 const routes = [
   {
@@ -24,11 +25,12 @@ const routes = [
       component: ClassList
   },
   {
-      name: 'create',
-      path: '/create',
-      component: ClassesCreate
+      name: 'teacher',
+      path: '/teacher',
+      component: TeachersList
   },
-  {path: '/classes/create', component: ClassesCreate, name: 'createClass'},
+  {path: '/class/create', component: ClassesCreate, name: 'createClass'},
+  {path: '/teacher/create', component: TeachersCreate, name: 'createTeacher'},
   
 ];
 

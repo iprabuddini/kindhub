@@ -2,23 +2,25 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <div class="form-group">
+                    <router-link :to="{name: 'createTeacher'}" class="btn btn-success">Create Teacher</router-link>
+
+                </div>
                 <div class="table table-borderless" id="table">
                     <table class="table table-borderless" id="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Description</th>                                
                                 <td>Action</td>
                             </tr>
                         </thead>
                         <tr v-for="item in items">
                             <td>{{ item.id }}</td>
                             <td>{{ item.name }}</td>
-                            <td>{{ item.description }}</td>
                             <td>
-<button class="button is-primary" v-bind:class="{ 'is-loading' : isDeleting(item.id) }" @click="deleteItem(item.id)">Delete Item</button>
-</td>
+                            <button class="button btn-danger" v-bind:class="{ 'is-loading' : isDeleting(item.id) }" @click="deleteItem(item.id)">Delete</button>
+                            </td>
                             
                             
                         </tr>
@@ -39,7 +41,7 @@
       mounted() {
       var _this = this;
 
-      axios.get('/class/all').then(function (response) {
+      axios.get('/teachers/all').then(function (response) {
         _this.items = response.data;
       });
     },
@@ -52,7 +54,7 @@
         async deleteItem(id) {
             let index = this.items.findIndex(item => item.id === id)
             Vue.set(this.items[index], 'isDeleting', true)
-            await axios.delete('/items/' + id)
+            await axios.get('/teacher/' + id)
             this.items.splice(index, 1)
         }
     }
