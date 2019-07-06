@@ -33,10 +33,17 @@ You can now access the server at http://localhost:8000
 ---------------
 
 `git clone git@github.com:iprabuddini/kindhub.git`
+
 `cd kindhub`
+
 `composer install`
+
 `cp .env.example .env`
+
 `php artisan key:generate`
+
 `Make sure you set the correct database connection information before running the migrations Environment variables`
+
 `php artisan migrate`
+
 `php artisan serve`
